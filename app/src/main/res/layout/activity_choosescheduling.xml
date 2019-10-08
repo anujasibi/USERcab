@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@color/blu"
+        android:id="@+id/rev"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/ne"
+            android:textSize="18sp"
+            android:background="@color/blu"
+            android:text="Choose schedule"
+            android:layout_toEndOf="@+id/imk"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:gravity="center_vertical"
+            android:textColor="#fff"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/imk"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/back"/>
+
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:textAlignment="center"
+        android:gravity="center_vertical"
+        android:textSize="18dp"
+        android:text="Choose your scheduling method"
+        android:textStyle="bold"
+        android:id="@+id/txtView"/>
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:layout_marginTop="40dp"
+        android:id="@+id/rdGroup"
+        android:layout_below="@+id/txtView">
+        <RadioButton
+            android:id="@+id/rdbJava"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginLeft="100dp"
+            android:text="From your current location"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton
+            android:id="@+id/rdbPython"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="100dp"
+            android:text="From other source"
+            android:onClick="onRadioButtonClicked"/>
+
+    </RadioGroup>
+
+</RelativeLayout>
