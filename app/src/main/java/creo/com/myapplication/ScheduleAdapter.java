@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -69,6 +70,21 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
         holder.source.setText(schedulePojos.get(position).getSources());
         holder.dest.setText(schedulePojos.get(position).getDestination());
         holder.assign.setText(schedulePojos.get(position).getAssign());
+        holder.idt.setText(schedulePojos.get(position).getIds());
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              if(holder.assign.getText().toString().equals("Accepted")){
+                  Toast.makeText(context,"Trip Accepted",Toast.LENGTH_SHORT).show();
+                  Intent i=new Intent(context,schedulecardetails.class);
+                  i.putExtra("tripid",holder.idt.getText().toString());
+                  context.startActivity(i);
+              }
+              else{
+                  Toast.makeText(context,"Wait Until driver accepts the request",Toast.LENGTH_SHORT).show();
+              }
+            }
+        });
 
 
     }
@@ -87,6 +103,10 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
         TextView source;
         TextView dest;
         TextView assign;
+        TextView idt;
+
+
+        CardView cardView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -96,6 +116,9 @@ public class ScheduleAdapter extends RecyclerView.Adapter<ScheduleAdapter.MyView
             source=(TextView)itemView.findViewById(R.id.source);
             dest=(TextView)itemView.findViewById(R.id.dest);
             assign=(TextView)itemView.findViewById(R.id.assign);
+            idt=(TextView)itemView.findViewById(R.id.ids);
+            cardView=itemView.findViewById(R.id.cardq);
+
 
 
 

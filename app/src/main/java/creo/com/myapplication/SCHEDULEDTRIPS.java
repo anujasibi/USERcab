@@ -100,14 +100,15 @@ public class SCHEDULEDTRIPS extends AppCompatActivity {
 
                                 SchedulePojo playerModel = new SchedulePojo();
                                 JSONObject dataobj = dataArray.getJSONObject(i);
+                               String pk=dataobj.getString("pk");
+                               Log.d("pkkkkkkk","mm"+pk);
+                               playerModel.setIds(pk);
                                 JSONObject fieldcab = dataobj.optJSONObject("fields");
                                 playerModel.setDate(fieldcab.getString("date"));
                                 playerModel.setTimes(fieldcab.getString("time"));
                                 playerModel.setSources(fieldcab.getString("source"));
                                 playerModel.setDestination(fieldcab.getString("destination"));
                                 playerModel.setAssign(fieldcab.getString("driver_status"));
-
-
                                 schedulePojos.add(playerModel);
 
 

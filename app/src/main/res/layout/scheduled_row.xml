@@ -88,6 +88,18 @@
                     android:layout_marginBottom="10dp"
                     android:layout_marginEnd="10dp"/>
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/ids"
+                    android:text="Trip ID"
+                    android:textColor="#000"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"/>
+
                 <ImageView
                     android:layout_width="30dp"
                     android:id="@+id/imagemm"

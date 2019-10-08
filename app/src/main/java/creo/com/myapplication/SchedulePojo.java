@@ -1,7 +1,9 @@
 package creo.com.myapplication;
 
 public class SchedulePojo {
-    public String date,times,sources,destination,assign;
+    public String date,times,sources,destination,assign,ids;
+
+
 
     public String getDate() {
         return date;
@@ -41,5 +43,13 @@ public class SchedulePojo {
 
     public void setAssign(String assign) {
         this.assign = assign;
+    }
+
+    public String getIds() {
+        return ids;
+    }
+
+    public void setIds(String ids) {
+        this.ids = ids;
     }
 }
